@@ -1,0 +1,12 @@
+parameters:
+	level: 6
+	phpVersion: 70205
+	paths:
+		- src
+	bootstrapFiles:
+		- ../../common/autoload.php
+		- vendor/autoload.php
+	universalObjectCratesClasses:
+		- BaseObject
+	dynamicConstantNames:
+		- RX_BASEURL

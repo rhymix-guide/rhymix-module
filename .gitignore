@@ -1,0 +1,4 @@
+vendor/bin
+vendor/phpstan
+vendor/**/composer.json
+docs/.vitepress/cache

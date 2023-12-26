@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+    <!-- 표시될 모듈 이름 -->
+    <title xml:lang="ko">Example1</title>
+    <!-- 표시될 모듈 설명 -->
+    <description xml:lang="ko">Example1 모듈</description>
+    <!-- 모듈 버전 -->
+    <version>0.1.0</version>
+    <!-- 모듈 배포 날짜 -->
+    <date>2023-12-31</date>
+
+    <!-- 제작자 정보 -->
+    <author email_address="author@email.local" link="https://github.com/">
+        <name xml:lang="ko">제작자 이름</name>
+    </author>
+</module>
