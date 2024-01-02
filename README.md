@@ -4,7 +4,7 @@
 > 이 템플릿을 사용하면 라이믹스의 모듈 만들기를 쉽게 시작할 수 있습니다.  
 > [Use this template](https://github.com/new?template_name=rhymix-module&template_owner=rhymix-guide) 버튼을 눌러보세요!
 >
-> GitHub 템플릿 저장소에 대해 알아보기 👉 [템플릿에서 리포지토리 만들기 - GitHub Docs](https://docs.github.com/ko/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+> 👉 [템플릿에서 리포지토리 만들기 - GitHub Docs](https://docs.github.com/ko/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
 
 > [!IMPORTANT]
 > 이 모듈 템플릿은 PHP 7.4 이상, Rhymix 2.1.3 이상에서 동작합니다.
@@ -28,9 +28,8 @@ modules/example1      # 이 예제 모듈의 폴더
 ├── public            # Assets
 ├── schemas           # 데이터베이스 스키마
 ├── src               # 모듈을 구성하는 PHP 코드
-│   ├── Controllers     # 컨트롤러
-│   ├── Helpers         # 헬퍼
-│   └── Models          # 모델
+│   ├── controllers     # 컨트롤러
+│   └── models          # 모델
 ├── views             # view 템플릿
 │   └── admin           # 관리페이지용 템플릿
 ├── composer.json     # composer 설정
@@ -54,11 +53,3 @@ $ composer run phpstan
 
  [OK] No errors
 ```
-
----
-
-## Todo
-
-- [ ] 네임스페이스 등 변경해야 할 항목 안내
-- [ ] PHPStan 사용법 보완
-- [ ] Vitepress 문서화 관련 내용
