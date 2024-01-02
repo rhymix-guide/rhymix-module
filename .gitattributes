@@ -1,11 +1,11 @@
 .gitattributes export-ignore
 .github export-ignore
 .gitignore export-ignore
+.gitkeep export-ignore
 composer.json export-ignore
 composer.lock export-ignore
-docs export-ignore
 package-lock.json export-ignore
 package.json export-ignore
 phpstan.neon export-ignore
-vendor/**/composer.json export-ignore
-vendor/bin export-ignore
+vendor/**/bin export-ignore
+vendor/**/tests? export-ignore

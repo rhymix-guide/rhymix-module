@@ -1,4 +1,3 @@
-vendor/bin
+vendor/**/bin
+vendor/**/tests?
 vendor/phpstan
-vendor/**/composer.json
-docs/.vitepress/cache
