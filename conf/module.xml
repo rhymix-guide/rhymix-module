@@ -2,29 +2,32 @@
 <module>
     <!-- 네임스페이스 -->
     <!--
-    `Rhymix\Modules\모듈명폴더` 대신 사용할 커스텀 네임스페이스를 설정.
-    이 네임스페이스 설정을 삭제하면 기본 네임스페이스인 `Rhymix\Modules\Example1`가 사용됨.
+    `Rhymix\Modules\모듈폴더명` 대신 사용할 커스텀 네임스페이스를 설정.
+    이 네임스페이스 설정하면 기본 네임스페이스 대신 지정한 네임스페이스를 사용할 수 있다.
     -->
+    <!--
     <namespaces>
         <namespace name="VendorName\Example1" />
     </namespaces>
+    -->
 
     <!--
     모듈의 기본 클래스를 지정합니다.
     여기에 지정된 클래스(`name` 속성)는 `\ModuleObject` 클래스를 상속해야 합니다.
     -->
     <classes>
-        <class type="default" name="Src\Module" />
-        <class type="install" name="Src\Module" />
+        <class type="default" name="Src\ModuleBase" />
+        <class type="install" name="Src\ModuleBase" />
     </classes>
 
     <actions>
         <!-- 관리페이지 대시보드 -->
         <!--
-            - `admin-index` 속성으로 모듈의 관리페이지 기본 액션으로 설정.
+            - `admin-index` 속성으로 모듈의 관리페이지 기본 액션으로 설정
+            - `class` 속성으로 이 액션을 처리하는 클래스가 지정되어 있으며, `name` 속성 이름과 같은 메소드가 호출됩니다.
         -->
         <action name="dispExample1AdminDashboard"
-            class="Src\Module"
+            class="Src\Controllers\AdminController"
             admin-index="true"
             menu-name="example1AdminDashboard" />
 
@@ -33,17 +36,23 @@
             - `menu-index` 속성과 `menu-name` 속성을 지정하여 관리페이지 메뉴에 사용할 수 있도록 설정
         -->
         <action name="dispExample1AdminConfig"
-            class="Src\Module"
+            class="Src\Controllers\AdminController"
             menu-index="true"
             menu-name="example1AdminConfig" />
 
         <!-- 모듈 설정 저장 -->
-        <action name="procExample1AdminConfig" class="Src\Module" />
+        <action name="procExample1AdminConfig"
+            class="Src\Controllers\AdminController" />
     </actions>
 
     <!-- 이벤트 핸들러 등록 -->
     <eventHandlers>
-        <eventHandler before="admin.dashboard" class="Src\EventHandler" method="adminDashboard" />
+        <!--
+        `class` 속성의 클래스의 `method` 속성의 이름을 가진 메소드를 호출합니다.
+        -->
+        <eventHandler before="admin.dashboard"
+            class="Src\EventHandler"
+            method="adminDashboard" />
     </eventHandlers>
 
     <!-- 관리페이지용 메뉴 -->

@@ -1,14 +1,13 @@
 {{-- 탭 메뉴를 출력하는 템플릿 --}}
 
-@use('VendorName\Example1\Src\Helpers\ConfigHelper', 'Example1ConfigHelper')
-
-@load ('css/config.scss')
-@load ('js/config.js')
+@php
+    $moduleConfig = new Rhymix\Modules\Example1\Src\Models\ConfigModel();
+@endphp
 
 <div class="x_page-header">
     <h1>
         {{ $lang->example1_module }}
-        <small>({{ Example1ConfigHelper::isEnable() ? '활성화 됨' : '비활성화' }})</small>
+        <small>({{ $moduleConfig->isEnable() ? '활성화 됨' : '비활성화' }})</small>
     </h1>
 </div>
 

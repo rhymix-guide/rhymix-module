@@ -2,7 +2,14 @@
 
 declare(strict_types=1);
 
-namespace VendorName\Example1\Src\Models;
+namespace Rhymix\Modules\Example1\Src\Models;
+
+/**
+ * Composer autoload
+ *
+ * 컴포저 패키지를 사용해야 한다면 아래 autoload.php 파일을 include 해야 한다.
+ */
+// include_once __DIR__ . '/../../vendor/autoload.php';
 
 use ModuleController;
 use ModuleModel;
@@ -27,7 +34,7 @@ class ConfigModel
     public function __construct()
     {
         $moduleConfig = ModuleModel::getModuleConfig($this->configKey);
-        if (is_null($moduleConfig) || !is_object($moduleConfig)) {
+        if (!is_object($moduleConfig)) {
             $moduleConfig = new \stdClass();
         }
 
@@ -64,14 +71,10 @@ class ConfigModel
     }
 
     /**
-     * 설정 변경사항 저장
+     * 설정 저장
      */
     public function save(): \BaseObject
     {
-        if (($this->config->enable ?? 'N') !== 'Y') {
-            $this->config->enable = 'N';
-        }
-
         $oModuleController = ModuleController::getInstance();
         $output = $oModuleController->insertModuleConfig($this->configKey, $this->config);
 

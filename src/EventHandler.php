@@ -3,20 +3,20 @@
 declare(strict_types=1);
 
 /** ❗️ 네임스페이스를 적절하게 변경해서 사용 */
-namespace VendorName\Example1\Src;
+namespace Rhymix\Modules\Example1\Src;
 
-use VendorName\Example1\Src\Helpers\ConfigHelper;
+use Rhymix\Modules\Example1\Src\Models\ConfigModel;
 
-class EventHandler extends Module
+class EventHandler extends ModuleBase
 {
     /**
      * 트리거를 이용해 관리자 대시보드에 출력하는 예제
      *
-     * @uses \ModuleHandler::triggerCall()
+     * @see \ModuleHandler::triggerCall()
      */
     public static function adminDashboard(object $object): void
     {
-        if (!ConfigHelper::isEnable()) {
+        if (!(new ConfigModel())->isEnable()) {
             return;
         }
 
